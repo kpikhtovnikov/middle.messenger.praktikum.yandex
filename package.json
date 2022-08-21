@@ -2,16 +2,15 @@
   "name": "middle.messenger.praktikum.yandex",
   "version": "1.0.0",
   "description": "Sprint 1",
-  "dependencies": {},
   "devDependencies": {
-    "@anikin/parcel-transformer-handlebars": "^1.0.9",
-    "parcel": "^2.7.0",
-    "@parcel/config-default": "^2.7.0"
+    "@anikin/parcel-transformer-handlebars": "^1.0.2",
+    "@parcel/config-default": "^2.5.0",
+    "parcel": "^2.5.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel src/index.hbs --no-cache",
-    "build": "parcel src/build index.hbs --no-cache"
+    "dev": "parcel --open --no-cache ./src/pages/index.hbs",
+    "build": "parcel build ./src/pages/index.hbs",
+    "start": "npm run build && node ./server.js"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+    <html lang="ru">
+        <head>
+            {{#block 'stylePage'}}
+                {{#each style}}
+                    <link rel="stylesheet" href="{{this}}">
+                {{/each}}
+            {{/block}}
+            <link rel="stylesheet" href="../pages/index.css">
+        </head>
+        <body>
+            {{#block 'main'}}{{/block}}
+        </body>
+    </html> 
