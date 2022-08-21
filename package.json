@@ -8,19 +8,10 @@
     "parcel": "^2.5.0"
   },
   "scripts": {
-    "dev": "parcel --open --no-cache ./src/pages/index.hbs",
+    "dev": "parcel --no-cache ./src/pages/index.hbs",
     "build": "parcel build ./src/pages/index.hbs",
     "start": "npm run build && node ./server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kpikhtovnikov/middle.messenger.praktikum.yandex.git"
-  },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kpikhtovnikov/middle.messenger.praktikum.yandex/issues"
-  },
-  "homepage": "https://github.com/kpikhtovnikov/middle.messenger.praktikum.yandex#readme"
+  "license": "ISC"
 }
