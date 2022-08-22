@@ -1,7 +1,30 @@
+---
+style:
+- ../components/css/button.css
+- ./css/signUp.css
+- ../components/css/input.css
+- ./css/profile.css
+---
+
 {{#extend 'layouts'}}
     {{#content 'main'}}
-        <div class="row">
-            Профиль
+        <div>
+            <div class="">
+                <a href="./chat.hbs">
+                    <img class="image-back" src="../../public/images/back.jpg" alt="Назад к чатам"/>
+                </a>
+            </div>
+            <div class="">
+                {{> userAvatar}}
+            </div>
+            <div class="">
+                {{> userProfile}}
+            </div>
+            <div class="">
+                <a class="" href="#1">Изменить данные</a>
+                <a class="" href="#2">Изменить пароль</a>
+                <a class="" href="#3">Изменить выйти</a>
+            </div>
         </div>
     {{/content}}
 {{/extend}}
