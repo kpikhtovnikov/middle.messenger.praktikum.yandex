@@ -1,0 +1,16 @@
+.input-outside {
+    padding: 0px 20px 15px 20px;
+}
+
+.input-label {
+    color: var(--color-gray);
+    font-size: 12px;
+}
+
+.input-inside {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--input-blue);
+    font-size: 13px;
+    padding: 7px 0;
+}

@@ -9,16 +9,18 @@ style:
 {{#extend 'layouts'}}
     {{#content 'main'}}
         <div class="page-registration">
-            <div class="">
-                <div class=""><h1>{{ title }}</h1></div>
-                <div class="">
+            <div class="page-registration-content">
+                <div class="page-registration-title"><h1>{{ title }}</h1></div>
+                <div class="page-registration-inputData">
                     {{#each signUp.inputData}}
                         {{> input label = this.title name = this.name type = this.type }}
                     {{/each}}
                 </div>
-                <div class="">
-                    {{> button text = "Зарегистрироваться" currentStyle = ""}}
-                    <a href="login.hbs">Вход</a>
+                <div class="field-buttons">
+                    <div class="button-login">
+                        {{> button text = "Зарегистрироваться" currentStyle = "button"}}
+                    </div>
+                    <a class="login-link" href="login.hbs">Вход</a>
                 </div>
             </div>
         </div>

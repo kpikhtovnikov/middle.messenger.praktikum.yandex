@@ -9,16 +9,18 @@ style:
 {{#extend 'layouts'}}
     {{#content 'main'}}
         <div class="page-login">
-            <div class="">
-                <div class=""><h1>{{ title }}</h1></div>
-                <div class="">
+            <div class="page-login-content">
+                <div class="page-login-title"><h1>{{ title }}</h1></div>
+                <div class="page-login-inputData">
                     {{#each login.inputData}}
                         {{> input label = this.title name = this.name type = this.type }}
                     {{/each}}
                 </div>
-                <div class="">
-                    {{> button text = "Авторизоваться" currentStyle = "" href = "chat.hbs"}}
-                    <a href="signUp.hbs">Нет аккаунта?</a>
+                <div class="field-buttons">
+                    <div class="button-login">
+                        {{> button text = "Авторизоваться" currentStyle = "button" href = "chat.hbs"}}
+                    </div>
+                    <a class="login-link" href="signUp.hbs">Нет аккаунта?</a>
                 </div>
             </div>
         </div>
