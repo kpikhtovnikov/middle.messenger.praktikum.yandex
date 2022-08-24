@@ -1,0 +1,23 @@
+.button {
+    background-color: var(--common-button);
+    color: var(--text-color);
+    border-radius: var(--border-radius-button);
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    line-height: 35px;
+    width: 85%;
+}
+
+.button-login {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-link {
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 12px;
+    text-decoration: none;
+    text-align: center;
+}
