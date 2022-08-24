@@ -17,6 +17,7 @@
 .page-404-back-chat {
     cursor: pointer;
     color: var(--button-back-chat);
+    text-decoration: none;
 }
 
 .page-404-content {

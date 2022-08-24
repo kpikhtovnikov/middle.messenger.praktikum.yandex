@@ -17,6 +17,7 @@
 .page-500-back-chat {
     cursor: pointer;
     color: var(--button-back-chat);
+    text-decoration: none;
 }
 
 .page-500-content {
