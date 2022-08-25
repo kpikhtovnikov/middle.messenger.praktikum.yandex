@@ -1,0 +1,40 @@
+---
+style:
+- ../components/css/button.css
+- ./css/signUp.css
+- ../components/css/input.css
+- ./css/profile.css
+---
+
+{{#extend 'layouts'}}
+    {{#content 'main'}}
+        <div>
+            <div class="image-back-block">
+                <a href="./chat.hbs">
+                    <img class="image-back" src="../../public/images/back.jpg" alt="Назад к чатам"/>
+                </a>
+            </div>
+            <div class="profile-data">
+                <div class="profile-avatar">
+                    {{> userAvatar}}
+                </div>
+                <div class="profile-name">Alex</div>
+                <div class="profile-page-block-input">
+                        {{#each profile.inputData}}
+                            <div class="profile-page-field">
+                                <div class="profile-page-label">
+                                    {{ this.title }}
+                                </div>
+                                <input class="profile-page-input" name="{{ this.name }}" placeholder="{{ this.value }}" />
+                            </div>
+                        {{/each}}
+                </div>
+                <div class="buttons-field">
+                    <a class="profile-button" href="#1">Изменить данные</a>
+                    <a class="profile-button" href="#2">Изменить пароль</a>
+                    <a class="profile-button" href="#3">Выйти</a>
+                </div>
+            </div>
+        </div>
+    {{/content}}
+{{/extend}}

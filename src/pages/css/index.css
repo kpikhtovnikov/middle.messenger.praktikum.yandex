@@ -1,0 +1,19 @@
+:root {
+    --title-black: #1E1E1E;
+    --button-back-chat: #3369F3;
+    --common-button: #3369F3;
+    --text-color: #FBFBFB;
+    --color-gray: #999999;
+    --input-blue: #3369F3;
+    --border-gray-profile-input: #EAEAEA;
+    --button-red: #FF0000;
+
+    --border-radius-button: 8px;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+.main {
+    width: 100%;
+    margin: 0 auto;
+}
