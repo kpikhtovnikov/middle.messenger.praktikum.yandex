@@ -1,0 +1,74 @@
+{
+  "payload": [
+    {
+      "userName": "Иван",
+      "lastMessage": "Изображение",
+      "time": "11:30",
+      "countNotReadMessage": 1,
+      "srcAvatar": "https://kartinkin.net/uploads/posts/2022-02/1645924960_5-kartinkin-net-p-kartinki-dlya-chata-5.png"
+    },
+    {
+      "userName": "Иван",
+      "lastMessage": "Изображение",
+      "time": "11:30",
+      "countNotReadMessage": 2,
+      "srcAvatar": "https://kartinkin.net/uploads/posts/2022-02/1645924960_5-kartinkin-net-p-kartinki-dlya-chata-5.png"
+    },
+    {
+      "userName": "Антон",
+      "lastMessage": "Хех.",
+      "time": "14:15",
+      "countNotReadMessage": 4,
+      "srcAvatar": "https://kartinkin.net/uploads/posts/2022-02/1645924960_5-kartinkin-net-p-kartinki-dlya-chata-5.png"
+    },
+    {
+      "userName": "Эдвард",
+      "lastMessage": "Это прикольно",
+      "time": "Ср",
+      "countNotReadMessage": 3,
+      "srcAvatar": "https://kartinkin.net/uploads/posts/2022-02/1645924960_5-kartinkin-net-p-kartinki-dlya-chata-5.png"
+    },
+    {
+      "userName": "Ксеофан",
+      "lastMessage": "Лол",
+      "time": "Пн",
+      "countNotReadMessage": 0,
+      "srcAvatar": "https://kartinkin.net/uploads/posts/2022-02/1645924960_5-kartinkin-net-p-kartinki-dlya-chata-5.png"
+    },
+    {
+      "userName": "Леонид",
+      "lastMessage": "Поехали",
+      "time": "Вс",
+      "countNotReadMessage": 0,
+      "srcAvatar": "https://kartinkin.net/uploads/posts/2022-02/1645924960_5-kartinkin-net-p-kartinki-dlya-chata-5.png"
+    },
+    {
+      "userName": "Терентий",
+      "lastMessage": "Привет",
+      "time": "Сб",
+      "countNotReadMessage": 0,
+      "srcAvatar": "https://kartinkin.net/uploads/posts/2022-02/1645924960_5-kartinkin-net-p-kartinki-dlya-chata-5.png"
+    },
+    {
+      "userName": "Анастасия",
+      "lastMessage": "Работаю",
+      "time": "Чт",
+      "countNotReadMessage": 0,
+      "srcAvatar": "https://kartinkin.net/uploads/posts/2022-02/1645924960_5-kartinkin-net-p-kartinki-dlya-chata-5.png"
+    },
+    {
+      "userName": "Екатерина",
+      "lastMessage": "Пошли сегодня",
+      "time": "14:15",
+      "countNotReadMessage": 0,
+      "srcAvatar": "https://kartinkin.net/uploads/posts/2022-02/1645924960_5-kartinkin-net-p-kartinki-dlya-chata-5.png"
+    },
+    {
+      "userName": "Елизавета",
+      "lastMessage": "Согласна",
+      "time": "11 января 2022",
+      "countNotReadMessage": 0,
+      "srcAvatar": "https://kartinkin.net/uploads/posts/2022-02/1645924960_5-kartinkin-net-p-kartinki-dlya-chata-5.png"
+    }
+  ]
+}

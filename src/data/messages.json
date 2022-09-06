@@ -1,0 +1,31 @@
+{
+  "payload": [
+    {
+      "text": "Привет! Как дела?",
+      "time": "10:00",
+      "owner": true
+    },
+    {
+      "text": " Смотри какая фотка",
+      "time": "10:00",
+      "owner": true
+    },
+    {
+      "srcImg": "https://mir-cdn.behance.net/v1/rendition/project_modules/1400_opt_1/f775ba148177617.62d0758aa9a40.jpg",
+      "time": "10:00",
+      "owner": true
+    },
+    {
+      "text": "Огонь!",
+      "time": "11:00",
+      "owner": false,
+      "isRead": false
+    },
+    {
+      "text": "Хехе",
+      "time": "13:05",
+      "owner": false,
+      "isRead": false
+    }
+  ]
+}

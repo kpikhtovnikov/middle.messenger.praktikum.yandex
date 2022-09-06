@@ -1,40 +1,11 @@
 {
-    "inputData": [
-        {
-            "title": "Почта",
-            "type": "text",
-            "value": "aa@yandex.ru",
-            "name": "email"
-        },
-        {
-            "title": "Логин",
-            "type": "text",
-            "value": "Alex",
-            "name": "login"
-        },
-        {
-            "title": "Имя",
-            "type": "text",
-            "value": "Alex",
-            "name": "first_name"
-        },
-        {
-            "title": "Фамилия",
-            "type": "text",
-            "value": "Ivanov",
-            "name": "second_name"
-        },
-        {
-            "title": "Имя в чате",
-            "type": "text",
-            "value": "Alex I.",
-            "name": "display_name"
-        },
-        {
-            "title": "Телефон",
-            "type": "text",
-            "value": "+79589998877",
-            "name": "phone"
-        }
-    ]
+  "payload": {
+    "email": "aa@yandex.ru",
+    "login": "Alex",
+    "name": "Alex",
+    "lastName": "Ivanov",
+    "chatName": "Alex I.",
+    "phone": 89589998877,
+    "password": "123456psw"
+  }
 }
