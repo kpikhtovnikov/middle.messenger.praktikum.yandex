@@ -1,6 +1,0 @@
-{
-    "inputData": [
-        {"title": "Логин","name": "login", "type": "text"},
-        {"title": "Пароль","name": "password", "type": "password"}
-    ]
-}
