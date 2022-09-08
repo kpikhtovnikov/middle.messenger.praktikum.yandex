@@ -33,4 +33,9 @@
   from = "/edit-profile"
   to = "/"
   status = 200
+
+[[redirects]]
+  from = "/error-404"
+  to = "/"
+  status = 200
   

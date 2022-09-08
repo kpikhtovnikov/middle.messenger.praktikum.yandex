@@ -21,6 +21,8 @@ export const getCurrentPage = () => {
       return new EditProfilePage({});
     case '/edit-password':
       return new EditPasswordPage({});
+    case '/error-404':
+      return new NotFoundPage({});
     default:
       return new NotFoundPage({});
   }
