@@ -6,7 +6,7 @@ const app = express();
 const { PORT = 3000 } = process.env;
 
 app.use(express.static(__dirname + '/dist/'));
-app.use(fallback('../dist/index.html', { root: __dirname }));
+app.use(fallback('index.html', { root: __dirname + '/dist/'}));
 
 app.get('/', function(req, res) {
   res.sendFile(path.resolve(__dirname, "/dist"));
