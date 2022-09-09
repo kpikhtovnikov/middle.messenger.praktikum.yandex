@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "module": "commonjs",                                /* Specify what module code is generated. */
-    "baseUrl": "./src",                                  /* Specify the base directory to resolve non-relative module names. */
+    "target": "es2016",                                  
+    "module": "commonjs",                            
+    "baseUrl": "./src",                              
     "typeRoots": ["node_modules/@types", "typings/app.d.ts"],
-    "sourceMap": true,                                   /* Create source map files for emitted JavaScript files. */
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
-    "strict": true,                                      /* Enable all strict type-checking options. */
+    "sourceMap": true,  
+    "esModuleInterop": true,                     
+    "forceConsistentCasingInFileNames": true,          
+    "strict": true,                                
     "noImplicitAny": true,                               /* Enable error reporting for expressions and declarations with an implied `any` type.. */
     "strictNullChecks": true,                            /* When type checking, take into account `null` and `undefined`. */
     "noUnusedLocals": true,                              /* Enable error reporting when a local variables aren't read. */
