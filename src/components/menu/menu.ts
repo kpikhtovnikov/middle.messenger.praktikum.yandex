@@ -22,7 +22,7 @@ export class Menu extends Block {
         new Popup(
           config.popupAddUserSelector,
           config.menuBtnAddUserSelector,
-          config.isOpenPopupSelecot,
+          config.isOpenPopupSelector,
           config
         ).handleOpenPopup();
       },
