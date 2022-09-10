@@ -1,5 +1,5 @@
 export interface BtnProfileProps {
   text: string;
-  classes?: string;
+  classes?: Array<string>;
   href: string;
 }
