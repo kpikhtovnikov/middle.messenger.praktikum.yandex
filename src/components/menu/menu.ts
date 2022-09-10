@@ -30,7 +30,7 @@ export class Menu extends Block {
         new Popup(
           config.popupDeleteUserSelector,
           config.menuBtnDeleteUserSelector,
-          config.isOpenPopupSelecot,
+          config.isOpenPopupSelector,
           config
         ).handleOpenPopup();
       },

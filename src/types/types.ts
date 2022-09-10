@@ -14,7 +14,7 @@ enum ButtonType {
 type ChatType = {
   userName: string;
   lastMessage: string;
-  time: string;
+  time: Date;
   countNotReadMessage: number;
   srcAvatar: string;
 };

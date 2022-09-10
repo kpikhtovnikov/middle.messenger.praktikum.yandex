@@ -24,7 +24,7 @@ export class EditProfilePage extends Block {
         new Popup(
           config.popupChangeAvatarSelector,
           config.editAvatarSelector,
-          config.isOpenPopupSelecot,
+          config.isOpenPopupSelector,
           config
         ).handleOpenPopup();
       },

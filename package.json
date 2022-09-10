@@ -30,7 +30,7 @@
     "routes": "./src/routes",
     "types": "./src/types",
     "components": "./src/components",
-    "img": "./src/image",
+    "img": "./public/image",
     "data": "./src/data",
     "variables": "./src/colors",
     "utils": "./src/utils",

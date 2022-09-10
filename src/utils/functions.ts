@@ -35,7 +35,7 @@ export const handleSubmitForm = ({
       });
       console.log(dataForm);
 
-      Popup.handleClosePopup(config.isOpenPopupSelecot);
+      Popup.handleClosePopup(config.isOpenPopupSelector);
     }
   } else {
     disableBtn();

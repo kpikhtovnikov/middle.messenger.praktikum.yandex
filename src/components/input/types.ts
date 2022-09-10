@@ -6,6 +6,6 @@ export interface InputProps {
   onBlur?: () => void;
   name: string;
   type: InputType;
-  minlength?: string;
-  maxlength?: string;
+  minlength?: number;
+  maxlength?: number;
 }
