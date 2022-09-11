@@ -1,23 +1,47 @@
 {
   "name": "middle.messenger.praktikum.yandex",
   "version": "1.0.0",
-  "description": "Sprint 1",
+  "description": "-",
   "devDependencies": {
     "@anikin/parcel-transformer-handlebars": "1.0.9",
-    "@parcel/config-default": "2.7.0",
-    "parcel": "2.7.0"
+    "@types/node": "18.0.0",
+    "@typescript-eslint/eslint-plugin": "5.28.0",
+    "@typescript-eslint/parser": "5.28.0",
+    "autoprefixer": "10.4.8",
+    "eslint": "8.18.0",
+    "handlebars": "4.7.7",
+    "parcel": "2.5.0",
+    "parcel-plugin-handlebars-precompile": "1.0.2",
+    "postcss-nested": "5.0.6",
+    "stylelint": "14.9.1",
+    "stylelint-config-standard": "26.0.0",
+    "typescript": "4.7.3"
   },
   "scripts": {
-    "dev": "parcel --no-cache ./src/pages/index.hbs",
-    "build": "parcel build ./src/pages/index.hbs",
-    "start": "npm run build && node ./server.js"
+    "dev": "parcel src/index.html --no-source-maps --no-cache ",
+    "build": "parcel build ./src/index.html",
+    "start": "npm run build && node ./backend/server.js",
+    "lint": "npx eslint .",
+    "style-lint": "npx stylelint \"**/*.css\" --fix"
+  },
+  "alias": {
+    "pages": "./src/pages",
+    "core": "./src/core",
+    "routes": "./src/routes",
+    "types": "./src/types",
+    "components": "./src/components",
+    "img": "./public/image",
+    "data": "./src/data",
+    "variables": "./src/colors",
+    "utils": "./src/utils",
+    "vendor": "./src/vendor",
+    "styles": "./src/styles"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "4.18.1"
-  },
-  "engines": {
-    "node": "12.22.1"
+    "express": "4.18.1",
+    "express-history-api-fallback": "2.2.1",
+    "nanoid": "4.0.0"
   }
 }
