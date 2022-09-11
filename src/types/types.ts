@@ -1,9 +1,9 @@
-enum InputType {
-  'text',
-  'email',
-  'password',
-  'tel',
-  'number',
+type InputType = {
+  text: "text",
+  email: "email",
+  password: "password",
+  tel: "tel",
+  number: "number",
 }
 
 enum ButtonType {

@@ -107,8 +107,8 @@ export class FormValidator extends View {
   }
 
   public checkStateForm() {
-    const form = document.querySelector(`.${this._formSelector}`) as HTMLFormElement;
-    return form.checkValidity();
+    const form = document.querySelector<HTMLFormElement>(`.${this._formSelector}`);
+    return form ? form.checkValidity(): false;
   }
 
   public addErrorsForInput = () => {
