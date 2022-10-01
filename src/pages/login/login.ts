@@ -1,45 +1,50 @@
-import Block from 'core/Block';
+import { Block, BrowseRouter as router } from 'core';
 import 'styles/auth.css';
-import { FormValidator } from 'utils/classes/FormValidator';
-import { config, AUTH_FORM } from 'utils/consts';
-import { handleSubmitForm, checkOnValueInput } from 'utils/functions';
+import { FormValidator } from 'utils/classes';
+import { config, FORM_ELEMENTS, PATHNAMES } from 'utils/consts';
+import { handleSubmitForm, checkOnValueInput, checkIsLoginIn } from 'utils';
+import { authService } from 'services';
+import { SigninType } from 'types';
 
-const loginFormValidator = new FormValidator(
+const signinFormValidator = new FormValidator(
   config,
-  AUTH_FORM,
+  FORM_ELEMENTS.AUTH_FORM,
   config.inputSelector,
   config.btnSubmitFormSelector,
   config.inputHelperTextSelector,
   config.isShowHelperTextSelector
 );
 
-export class LoginPage extends Block {
+export class SigninPage extends Block {
   protected getStateFromProps() {
     this.state = {
       handleChangeInput: (evt: Event) => {
         checkOnValueInput(evt);
-        loginFormValidator.clearError();
-        loginFormValidator.toggleBtnState();
+        signinFormValidator.clearError();
+        signinFormValidator.toggleBtnState();
       },
       handleSubmitForm: (evt: Event) => {
         evt.preventDefault();
-        handleSubmitForm({
-          stateForm: loginFormValidator.checkStateForm(),
+        const dataForm = handleSubmitForm({
+          stateForm: signinFormValidator.checkStateForm(),
           inputSelector: config.inputSelector,
-          formSelector: AUTH_FORM,
-          disableBtn: loginFormValidator.disableBtn,
-          addErrors: loginFormValidator.addErrorsForInput,
+          formSelector: FORM_ELEMENTS.AUTH_FORM,
+          disableBtn: signinFormValidator.disableBtn,
+          addErors: signinFormValidator.addErrorsForInput,
         });
+
+        dataForm && authService.signin(dataForm as SigninType);
       },
-      handleValidateInput: (evt: Event) => loginFormValidator.handleFieldValidation(evt),
+      handleValidateInput: (evt: Event) => signinFormValidator.handleFieldValidation(evt),
+      handleLinkBtn: () => router.go(PATHNAMES.SIGNUP_PATH),
     };
   }
   render() {
-
+ 
     return `
       <div class="page">
         <main class="page__form">
-          <form class="auth" name="login" novalidate>
+          <form class="auth" name="signin" novalidate>
             <h1 class="auth__title">Вход</h1>
             {{{InputWrapper
               onInput=handleChangeInput
@@ -68,7 +73,10 @@ export class LoginPage extends Block {
               type="submit"
               classes="button_is-auth"
             }}}
-            <a class="auth__link" href="/signup">Нет аккаунта?</a>
+            {{{AuthLink
+              onClick=handleLinkBtn
+              text="Нет аккаунта?"
+            }}}
           </form>
         </main>
       </div>
