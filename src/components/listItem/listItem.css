@@ -26,7 +26,7 @@
   &__user-name {
     margin: 0;
     font-size: 13px;
-    color: var(--color-primaty);
+    color: var(--color-text);
     font-weight: 600;
     line-height: 13px;
     margin-bottom: 6px;
@@ -42,7 +42,7 @@
   }
 
   &__message_bold {
-    color: var(--color-primaty);
+    color: var(--color-text);
     margin-right: 3px;
   }
 

@@ -21,7 +21,7 @@
     left: 0;
     transform: translateY(-50%);
     font-size: 13px;
-    color: var(--color-primaty);
+    color: var(--color-text);
     font-weight: 500;
     line-height: 13px;
   }

@@ -21,7 +21,7 @@
   &__user-name {
     margin: 0;
     font-size: 16px;
-    color: var(--color-primaty);
+    color: var(--color-text);
     font-weight: 600;
     line-height: 16px;
     text-align: center;

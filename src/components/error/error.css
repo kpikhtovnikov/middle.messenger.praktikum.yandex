@@ -8,7 +8,7 @@
   &__title {
     margin: 0;
     font-size: 40px;
-    color: var(--color-primaty);
+    color: var(--color-text);
     font-weight: 500;
     line-height: 40px;
     margin-bottom: 20px;
@@ -17,7 +17,7 @@
   &__subtitle {
     margin: 0;
     font-size: 20px;
-    color: var(--color-primaty);
+    color: var(--color-text);
     font-weight: 500;
     line-height: 20px;
     text-align: center;
