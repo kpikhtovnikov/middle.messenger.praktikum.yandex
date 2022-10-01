@@ -1,5 +1,6 @@
 export interface BtnProfileProps {
+  onClick?: () => void;
   text: string;
-  classes?: Array<string>;
-  href: string;
+  classes?: string;
+  type: 'button' | 'link';
 }
