@@ -61,7 +61,7 @@ export class FormPopup extends Block {
     };
 
     return `
-          <form class="formPopup ${
+          <form class="form-popup ${
             classesForm !== 'undefined' ? classesForm : ''
           }" name="${name}" novalidate>
             ${renderFormElement()}
