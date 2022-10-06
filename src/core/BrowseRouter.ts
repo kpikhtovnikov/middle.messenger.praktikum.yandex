@@ -32,7 +32,7 @@ class BrowseRouter {
     this._onRoute(window.location.pathname);
   }
 
-  _onRoute(pathname: string) {
+  private _onRoute(pathname: string) {
     checkOnCorrectUrl(pathname);
 
     const route = this.getRoute(pathname);
