@@ -11,14 +11,18 @@ export class Users extends Block {
   }
 
   protected getStateFromProps(props: any): void {
-    this.state = {
-      users:
-        props.users !== 'undefined' && props.users.length > 0
-          ? JSON.parse(props.users)
-          : [],
-      type: props.type,
-      onClick: props.onClick,
-    };
+    try {
+      this.state = {
+        users:
+          props.users !== 'undefined' && props.users.length > 0
+            ? JSON.parse(props.users)
+            : [],
+        type: props.type,
+        onClick: props.onClick,
+      };
+    } catch(e) {
+      console.log(e);
+    }
   }
 
   protected render(): string {
