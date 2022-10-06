@@ -75,7 +75,7 @@ class ChatService {
           usersFromChats.push(userItems.find((user: UserType) => user.id === users[0]));
           store.setState(
             { usersFromChats: JSON.stringify(usersFromChats) },
-            StoreEvents.ADD_USERS
+            StoreEvents.add_users
           );
 
           const filteredUserItems = userItems.filter(
@@ -83,7 +83,7 @@ class ChatService {
           );
           store.setState(
             { users: JSON.stringify(filteredUserItems) },
-            StoreEvents.ADD_USERS
+            StoreEvents.add_users
           );
 
           showTooltip({
@@ -131,13 +131,13 @@ class ChatService {
                 usersFromChats.filter((user: UserType) => user.id !== users[0])
               ),
             },
-            StoreEvents.DELETE_USERS
+            StoreEvents.delete_users
           );
 
           usersFromChats.length === 1 &&
             store.setState(
               { chats: state.chats?.filter((chat) => chat.id !== chatId) },
-              StoreEvents.DELETE_USERS
+              StoreEvents.delete_users
             );
         }
       })

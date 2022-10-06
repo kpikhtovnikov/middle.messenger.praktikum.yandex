@@ -45,15 +45,15 @@ export class ChatPage extends Block {
     authService.getInfo();
     messagesService.getMessages();
 
-    store.on(StoreEvents.UPDATE, () => {
+    store.on(StoreEvents.update, () => {
       this.setProps(store.getState());
     });
 
-    store.on(StoreEvents.ADD_USERS, () => {
+    store.on(StoreEvents.add_users, () => {
       this.setProps(store.getState());
     });
 
-    store.on(StoreEvents.DELETE_USERS, () => {
+    store.on(StoreEvents.delete_users, () => {
       this.setProps(store.getState());
     });
   }
@@ -87,17 +87,17 @@ export class ChatPage extends Block {
           chatService.getUserForChat({ chatId: Number(chatItemId) });
         }
 
-        store.on(StoreEvents.UPDATE, () => {
+        store.on(StoreEvents.update, () => {
           new Chat(config).addActiveClassName(evt);
           fixedBottomScroll();
         });
 
-        store.on(StoreEvents.ADD_USERS, () => {
+        store.on(StoreEvents.add_users, () => {
           new Chat(config).addActiveClassName(evt);
           fixedBottomScroll();
         });
 
-        store.on(StoreEvents.DELETE_USERS, () => {
+        store.on(StoreEvents.delete_users, () => {
           new Chat(config).addActiveClassName(evt);
           fixedBottomScroll();
         });
@@ -138,7 +138,7 @@ export class ChatPage extends Block {
 
         dataForm && chatService.createChat(dataForm as CreateChatType);
 
-        store.on(StoreEvents.UPDATE, () => {
+        store.on(StoreEvents.update, () => {
           const state = store.getState() as InitialStateType;
           this.setProps({ chats: state.chats });
         });
@@ -167,7 +167,7 @@ export class ChatPage extends Block {
           } as SearchUserByLoginType);
         }
 
-        store.on(StoreEvents.ADD_USERS, () => {
+        store.on(StoreEvents.add_users, () => {
           new Popup(
             config.popupAddUserSelector,
             config.btnSubmitFormSelector,
@@ -191,7 +191,7 @@ export class ChatPage extends Block {
           chatId: Number(this.state.chatItemId),
         });
 
-        store.on(StoreEvents.DELETE_USERS, () => {
+        store.on(StoreEvents.delete_users, () => {
           const state = store.getState() as InitialStateType;
           if (state.usersFromChats) {
             const usersFromChatsLength = JSON.parse(state.usersFromChats).length;
@@ -220,7 +220,7 @@ export class ChatPage extends Block {
         messagesService.sendMessage(input.value);
         input.value = '';
 
-        store.on(StoreEvents.UPDATE, () => fixedBottomScroll());
+        store.on(StoreEvents.update, () => fixedBottomScroll());
       },
     };
   }

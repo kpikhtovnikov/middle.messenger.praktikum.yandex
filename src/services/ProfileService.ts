@@ -44,7 +44,7 @@ class ProfileService {
     return profileApi
       .searchUserByLogin({ ...rest })
       .then(({ response }: any) =>
-        store.setState({ users: response }, StoreEvents.ADD_USERS)
+        store.setState({ users: response }, StoreEvents.add_users)
       )
       .catch(showError);
   }

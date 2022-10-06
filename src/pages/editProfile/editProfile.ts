@@ -21,7 +21,7 @@ export class EditProfilePage extends Block {
 
     authService.getInfo();
 
-    store.on(StoreEvents.UPDATE, () => {
+    store.on(StoreEvents.update, () => {
       this.setProps(store.getState());
     });
   }
