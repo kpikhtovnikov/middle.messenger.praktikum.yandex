@@ -5,14 +5,14 @@ export class Chat extends View {
     super();
     this._messagesSelector = config.messagesSelector;
     this._contentDefaultSelector = config.contentDefaultSelector;
-    this._contentDialodSelector = config.contentDialodSelector;
+    this._contentDialogSelector = config.contentDialogSelector;
     this._isActiveChatSelector = config.isActiveChatSelector;
-    this._hiddenChatSelecor = config.hiddenChatSelecor;
+    this._hiddenChatSelector = config.hiddenChatSelector;
     this._searchInputByChatsSelector = config.searchInputByChatsSelector;
     this._imgFromSearchInputByChatsSelector = config.imgFromSearchInputByChatsSelector;
     this._messages = document.querySelectorAll(`.${this._messagesSelector}`);
     this._contentDefault = document.querySelector(`.${this._contentDefaultSelector}`);
-    this._contentDialod = document.querySelector(`.${this._contentDialodSelector}`);
+    this._contentDialog = document.querySelector(`.${this._contentDialogSelector}`);
     this._searchInputByChats = document.querySelector(
       `.${this._searchInputByChatsSelector}`
     );
@@ -43,10 +43,10 @@ export class Chat extends View {
   public addActiveClassName(evt: Event) {
     this._removeActiveClassName();
     this._element = evt.currentTarget as Element;
-    this._element.classList.add(this._isActiveChatSelector);
-    if (this._contentDefault && this._contentDialod) {
-      this._contentDefault.classList.add(this._hiddenChatSelecor);
-      this._contentDialod.classList.remove(this._hiddenChatSelecor);
+    this._element?.classList.add(this._isActiveChatSelector);
+    if (this._contentDefault && this._contentDialog) {
+      this._contentDefault.classList.add(this._hiddenChatSelector);
+      this._contentDialog.classList.remove(this._hiddenChatSelector);
     }
   }
 

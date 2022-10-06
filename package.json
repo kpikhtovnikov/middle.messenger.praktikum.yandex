@@ -35,7 +35,9 @@
     "variables": "./src/colors",
     "utils": "./src/utils",
     "vendor": "./src/vendor",
-    "styles": "./src/styles"
+    "styles": "./src/styles",
+    "api": "./src/api",
+    "services": "./src/services"
   },
   "author": "",
   "license": "ISC",

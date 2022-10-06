@@ -1,22 +1,25 @@
-import Block from 'core/Block';
+import { Block } from 'core';
 import './menu.css';
 import { MenuProps } from './types';
-import { Popup } from 'utils/classes/Popup';
-import { config } from 'utils/consts';
+import { config, Popup } from 'utils';
 import plus from 'img/plus.svg';
 import close from 'img/close.svg';
 import photo from 'img/photo.svg';
 import file from 'img/file.svg';
 import location from 'img/location.svg';
+import { chatService } from 'services';
 
 export class Menu extends Block {
   static componentName = 'Menu';
-  constructor({ isUser }: MenuProps) {
-    super({ isUser });
+
+  constructor({ ...rest }: MenuProps) {
+    super({ ...rest });
   }
+
   protected getStateFromProps(props: MenuProps): void {
     this.state = {
       isUser: props.isUser,
+      chatItemId: props.chatItemId,
 
       handleAddUserPopup: () => {
         new Popup(
@@ -34,10 +37,15 @@ export class Menu extends Block {
           config
         ).handleOpenPopup();
       },
+      handleRemoveChat: () => {
+        chatService.removeChatById({ chatId: this.state.chatItemId });
+        Popup.handleClosePopup(config.isShowMenuSelector);
+      },
     };
   }
+
   protected render(): string {
- 
+
     return `
       {{#if ${this.state.isUser}}}
         <nav class="menu menu__list_element_user">
@@ -46,7 +54,7 @@ export class Menu extends Block {
               {{{MenuButton
                 text="Добавить пользователя"
                 icon="${plus}"
-                alt="Добавить"
+                alt="Добавить пользователя"
                 classes="menu-button_add-user"
                 type="button"
                 onClick=handleAddUserPopup
@@ -56,11 +64,19 @@ export class Menu extends Block {
               {{{MenuButton
                 text="Удалить пользователя"
                 icon="${close}"
-                alt="Удалить"
+                alt="Удалить пользователя"
                 classes="menu-button_delete-user"
                 type="button"
                 onClick=handleDeleteUserPopup
               }}}
+            </li>
+            <li class="menu__item">
+            {{{Button
+              onClick=handleRemoveChat
+              textBtn="Удалить чат"
+              type="button"
+              classes="button_el_remove-item"
+            }}}
             </li>
           </ul>
         </nav>
@@ -71,30 +87,27 @@ export class Menu extends Block {
               {{{MenuButton
                 text="Фото или Видео"
                 icon="${photo}"
-                alt="Иконка плюса"
+                alt="Фото или Видео"
                 classes="menu-button_add-photo"
                 type="button"
-                onClick=handleDeleteUserPopup
               }}}
             </li>
             <li class="menu__item">
               {{{MenuButton
                 text="Файл"
                 icon="${file}"
-                alt="Иконка крестика"
+                alt="Файл"
                 classes="menu-button_add-file"
                 type="button"
-                onClick=handleDeleteUserPopup
               }}}
             </li>
             <li class="menu__item">
               {{{MenuButton
                 text="Локация"
                 icon="${location}"
-                alt="Иконка локации"
+                alt="Локация"
                 classes="menu-button_add-location"
                 type="button"
-                onClick=handleDeleteUserPopup
               }}}
             </li>
           </ul>

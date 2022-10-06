@@ -1,12 +1,14 @@
-import Block from 'core/Block';
+import { Block, BrowseRouter as router } from 'core';
 import 'styles/auth.css';
-import { FormValidator } from 'utils/classes/FormValidator';
-import { config, AUTH_FORM } from 'utils/consts';
-import { handleSubmitForm, checkOnValueInput } from 'utils/functions';
+import { FormValidator } from 'utils/classes';
+import { config, FORM_ELEMENTS, PATHNAMES } from 'utils/consts';
+import { handleSubmitForm, checkOnValueInput, checkIsLoginIn } from 'utils';
+import { authService } from 'services';
+import { SignupType } from 'types';
 
 const signupFormValidator = new FormValidator(
   config,
-  AUTH_FORM,
+  FORM_ELEMENTS.AUTH_FORM,
   config.inputSelector,
   config.btnSubmitFormSelector,
   config.inputHelperTextSelector,
@@ -23,23 +25,26 @@ export class SignupPage extends Block {
       },
       handleSubmitForm: (evt: Event) => {
         evt.preventDefault();
-        const isValidField = signupFormValidator.isValidFieldWithCustomRules();
-        handleSubmitForm({
+        const dataForm = handleSubmitForm({
           stateForm: signupFormValidator.checkStateForm(),
           inputSelector: config.inputSelector,
-          formSelector: AUTH_FORM,
+          formSelector: FORM_ELEMENTS.AUTH_FORM,
           disableBtn: signupFormValidator.disableBtn,
-          addErrors: signupFormValidator.addErrorsForInput,
-          isValidField,
+          addErors: signupFormValidator.addErrorsForInput,
+          isValidField: signupFormValidator.isValidFieldWithCustomRules(),
         });
+
+        dataForm && authService.signup(dataForm as SignupType);
       },
+
       handleValidateInput: (evt: Event) => {
         signupFormValidator.handleFieldValidation(evt);
       },
+      handleLinkBtn: () => router.go(PATHNAMES.SIGNIN_PATH),
     };
   }
-  render() {
 
+  render() {
     return `
       <div class="page">
         <main class="page__form">
@@ -71,7 +76,7 @@ export class SignupPage extends Block {
               helperText="Имя"
               minlength="1"
               maxlength="50"
-              name="name"
+              name="first_name"
             }}}
             {{{InputWrapper
               onInput=handleChangeInput
@@ -81,7 +86,7 @@ export class SignupPage extends Block {
               helperText="Фамилия"
               minlength="1"
               maxlength="50"
-              name="lastName"
+              name="second_name"
             }}}
             {{{InputWrapper
               onInput=handleChangeInput
@@ -120,7 +125,10 @@ export class SignupPage extends Block {
               type="submit"
               classes="button_is-auth"
             }}}
-            <a class="auth__link" href="/">Войти</a>
+            {{{AuthLink
+              onClick=handleLinkBtn
+              text="Войти?"
+            }}}
           </form>
         </main>
       </div>
