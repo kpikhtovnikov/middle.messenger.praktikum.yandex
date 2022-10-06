@@ -42,6 +42,17 @@ interface SigninType {
   password: string;
 }
 
+interface GetInfoType {
+  id: number;
+  first_name: string;
+  second_name: string;
+  display_name: string;
+  email: string;
+  login: string;
+  phone: string;
+  avatar: string;
+}
+
 interface CreateChatType {
   title: string;
 }
@@ -161,9 +172,9 @@ interface InitialStateType {
 type props = Record<string, any>;
 
 enum StoreEvents {
-  UPDATE = 'update',
-  ADD_USERS = 'add-users',
-  DELETE_USERS = 'delete-users',
+  update = 'update',
+  add_users = 'add-users',
+  delete_users = 'delete-users',
 }
 
 export {
@@ -190,4 +201,5 @@ export {
   RemoveUserFromChat,
   InitialStateType,
   UserType,
+  GetInfoType
 };

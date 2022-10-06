@@ -22,5 +22,6 @@ export {
     RemoveUserFromChat,
     InitialStateType,
     UserType,
+    GetInfoType
   } from './types';
   

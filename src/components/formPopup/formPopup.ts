@@ -1,5 +1,6 @@
 import { Block } from 'core';
 import './formPopup.css';
+import { FormPopupProps } from './types';
 
 export class FormPopup extends Block {
   static componentName = 'FormPopup';
@@ -10,7 +11,7 @@ export class FormPopup extends Block {
       ...rest,
     });
   }
-  protected getStateFromProps(props: any): void {
+  protected getStateFromProps(props: FormPopupProps): void {
     this.state = {
       classesForm: props.classesForm,
       name: props.name,
