@@ -1,13 +1,14 @@
-import { registerComponent, BrowseRouter as router } from 'core';
+import './index.css';
+import { registerComponent, BrowseRouter as router } from './core';
 import { getScreenComponent, PATHNAMES } from './utils';
-import { Screens } from 'types';
-import { components } from 'components';
+import { Screens } from './types';
+import { components } from './components';
 
 components.forEach((component) => {
   registerComponent(component);
 });
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   router
     .use(PATHNAMES.SIGNIN_PATH, getScreenComponent(Screens.Signin))
     .use(PATHNAMES.SIGNUP_PATH, getScreenComponent(Screens.Signup))

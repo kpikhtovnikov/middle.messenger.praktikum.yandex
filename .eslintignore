@@ -3,3 +3,6 @@
 /node_modules
 /backend
 /.github
+postcss.config.js
+babel.config.js
+webpack.config.js
