@@ -36,6 +36,7 @@ module.exports = {
       styles: path.resolve(__dirname, 'src/styles'),
       api: path.resolve(__dirname, 'src/api'),
       services: path.resolve(__dirname, 'src/services'),
+      handlebars: 'handlebars/dist/handlebars.js'
     },
   },
   module: {

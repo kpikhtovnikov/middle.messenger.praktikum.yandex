@@ -1,6 +1,6 @@
 import EventBus from './EventBus';
 import { nanoid } from 'nanoid';
-import Handlebars from 'handlebars/runtime';
+import Handlebars from 'handlebars';
 
 type Events = Values<typeof Block.EVENTS>;
 

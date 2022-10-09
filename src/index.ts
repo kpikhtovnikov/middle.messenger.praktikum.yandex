@@ -8,7 +8,7 @@ components.forEach((component) => {
   registerComponent(component);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   router
     .use(PATHNAMES.SIGNIN_PATH, getScreenComponent(Screens.Signin))
     .use(PATHNAMES.SIGNUP_PATH, getScreenComponent(Screens.Signup))
