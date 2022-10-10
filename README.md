@@ -30,6 +30,9 @@ https://mellifluous-cuchufli-8515bb.netlify.app
 # Деплой на Heroku
 https://my-app-messenger-12345.herokuapp.com/
 
+# Swagger
+https://ya-praktikum.tech/api/v2/swagger/#/
+
 ### Технологии
 
 - HTML
