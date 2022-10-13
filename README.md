@@ -17,7 +17,7 @@ npm run lint:style
 # Запуск docker
 npm run docker
 
-# Запуск docker
+# Запуск тестов
 npm run test
 
 
