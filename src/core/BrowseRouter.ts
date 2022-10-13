@@ -1,6 +1,11 @@
 import { BlockClass, props } from 'types';
 import { Route } from './Route';
-import { checkOnCorrectUrl } from 'utils';
+import { checkOnCorrectUrl } from '../utils/functions/checkOnCorrectUrl';
+import Block from './Block';
+
+export interface BlockConstructable<P = any> {
+  new(props: P): Block<P>;
+}
 
 class BrowseRouter {
   static __instance: BrowseRouter;

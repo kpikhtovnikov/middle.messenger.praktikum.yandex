@@ -1,4 +1,4 @@
-import { BrowseRouter as router } from 'core';
+import { BrowseRouter as router } from '../../core';
 import { PATHNAMES } from 'utils';
 
 export function checkOnCorrectUrl(pathname: string) {

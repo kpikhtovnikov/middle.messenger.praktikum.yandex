@@ -67,6 +67,7 @@ export default class Block<P = any> {
     this.componentDidMount();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   componentDidMount() {}
 
   _componentDidUpdate() {
