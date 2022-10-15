@@ -7,10 +7,6 @@ describe('core/EventBus', () => {
 
   const mock = sinon.spy();
 
-  it('must be defined', () => {
-    expect(eventBus).not.to.be('undefined');
-  });
-
   it('on and emit event', () => {
     eventBus.on('test-event', mock);
     eventBus.emit('test-event');
