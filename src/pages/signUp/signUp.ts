@@ -2,7 +2,7 @@ import { Block, BrowseRouter as router } from 'core';
 import 'styles/auth.css';
 import { FormValidator } from 'utils/classes';
 import { config, FORM_ELEMENTS, PATHNAMES } from 'utils/consts';
-import { handleSubmitForm, checkOnValueInput, checkIsLoginIn } from 'utils';
+import { handleSubmitForm, checkOnValueInput } from 'utils';
 import { authService } from 'services';
 import { SignupType } from 'types';
 
@@ -16,6 +16,12 @@ const signupFormValidator = new FormValidator(
 );
 
 export class SignupPage extends Block {
+  constructor(...args: any) {
+    super(...args);
+
+    authService.redirectUser();
+  }
+
   protected getStateFromProps() {
     this.state = {
       handleChangeInput: (evt: Event) => {
@@ -23,7 +29,7 @@ export class SignupPage extends Block {
         signupFormValidator.clearError();
         signupFormValidator.toggleBtnState();
       },
-      handleSubmitForm: (evt: Event) => {
+      hendleSubmitForm: (evt: Event) => {
         evt.preventDefault();
         const dataForm = handleSubmitForm({
           stateForm: signupFormValidator.checkStateForm(),
@@ -45,6 +51,7 @@ export class SignupPage extends Block {
   }
 
   render() {
+    // language=hbs
     return `
       <div class="page">
         <main class="page__form">
@@ -120,7 +127,7 @@ export class SignupPage extends Block {
               name="repeatPassword"
             }}}
             {{{Button
-              onClick=handleSubmitForm
+              onClick=hendleSubmitForm
               textBtn="Зарегистрироваться"
               type="submit"
               classes="button_is-auth"

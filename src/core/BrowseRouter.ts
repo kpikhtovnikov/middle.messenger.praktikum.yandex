@@ -1,6 +1,11 @@
 import { BlockClass, props } from 'types';
 import { Route } from './Route';
-import { checkOnCorrectUrl } from 'utils';
+import { checkOnCorrectUrl } from '../utils/functions/checkOnCorrectUrl';
+import Block from './Block';
+
+export interface BlockConstructable<P = any> {
+  new(props: P): Block<P>;
+}
 
 class BrowseRouter {
   static __instance: BrowseRouter;
@@ -26,13 +31,14 @@ class BrowseRouter {
 
   start() {
     window.onpopstate = (event) => {
-      this._onRoute(event.currentTarget?.location.pathname);
+      const target = event.currentTarget as Window;
+      this._onRoute(target.location.pathname);
     };
 
     this._onRoute(window.location.pathname);
   }
 
-  private _onRoute(pathname: string) {
+  _onRoute(pathname: string) {
     checkOnCorrectUrl(pathname);
 
     const route = this.getRoute(pathname);
@@ -68,6 +74,10 @@ class BrowseRouter {
       router['block'] = null;
     }
     return router || this.routers.find((route) => route.match('*'));
+  }
+
+  getRouters() {
+    return this.routers;
   }
 }
 

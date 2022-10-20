@@ -126,7 +126,7 @@ export class ChatPage extends Block {
         addChatFromValidator.clearError();
         addChatFromValidator.toggleBtnState();
       },
-      handleSubmitAddChatForm: (evt: Event) => {
+      hendleSubmitAddChatForm: (evt: Event) => {
         evt.preventDefault();
         const dataForm = handleSubmitForm({
           stateForm: addChatFromValidator.checkStateForm(),
@@ -151,7 +151,7 @@ export class ChatPage extends Block {
         addUserFormValidator.clearError();
         addUserFormValidator.toggleBtnState();
       },
-      handleFindUserByLogin: (evt: Event) => {
+      hendleFindUserByLogin: (evt: Event) => {
         evt.preventDefault();
         const dataForm = handleSubmitForm({
           stateForm: addUserFormValidator.checkStateForm(),
@@ -297,7 +297,7 @@ export class ChatPage extends Block {
               ${messages
                 .map((message: MessageDTO) => {
                   const isUniqCurrentMessage = uniqMessages.find(
-                    (uniqMessage) => uniqMessage.id === message.id
+                    (uniqMessage) => uniqMessage?.id === message.id
                   );
                   return `
                     {{{Message
@@ -316,7 +316,7 @@ export class ChatPage extends Block {
         {{{Menu isUser=true chatItemId="${chatItemId}"}}}
         {{{Menu isUser=false}}}
         {{{Popup
-          onSubmit=handleSubmitAddChatForm
+          onSubmit=hendleSubmitAddChatForm
           onInput=handleChangeAddChatInput
           onFocus=handleValidateAddChatInput
           onBlur=handleValidateAddChatInput
@@ -330,7 +330,7 @@ export class ChatPage extends Block {
           fieldName="title"
         }}}
         {{{Popup
-          onSubmit=handleFindUserByLogin
+          onSubmit=hendleFindUserByLogin
           onInput=handleChangeAddUserInput
           onFocus=handleValidateAddUserInput
           onBlur=handleValidateAddUserInput

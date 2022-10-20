@@ -8,6 +8,8 @@ enum METHODS {
 
 type RequestData = Record<string, string | number>;
 
+type Data = Document | XMLHttpRequestBodyInit | null | undefined;
+
 type RequestOptions = {
   method?: METHODS;
   headers?: Record<string, string>;
@@ -28,21 +30,26 @@ function queryStringify(data: RequestData) {
 }
 
 export class HTTPTransport {
+  private _baseUrl: string;
+
+  constructor(baseUrl: string) {
+    this._baseUrl = baseUrl;
+  }
   public get = (url: string, options = {}) =>
-    this.request(url, { ...options, method: METHODS.GET });
+    this.request(`${this._baseUrl}/${url}`, { ...options, method: METHODS.GET });
 
   public post = (url: string, options = {}) =>
-    this.request(url, { ...options, method: METHODS.POST });
+    this.request(`${this._baseUrl}/${url}`, { ...options, method: METHODS.POST });
 
   public put = (url: string, options = {}) =>
-    this.request(url, { ...options, method: METHODS.PUT });
+    this.request(`${this._baseUrl}/${url}`, { ...options, method: METHODS.PUT });
 
   public patch = (url: string, options = {}) => {
-    return this.request(url, { ...options, method: METHODS.PATCH });
+    return this.request(`${this._baseUrl}/${url}`, { ...options, method: METHODS.PATCH });
   };
 
   public delete = (url: string, options = {}) =>
-    this.request(url, { ...options, method: METHODS.DELETE });
+    this.request(`${this._baseUrl}/${url}`, { ...options, method: METHODS.DELETE });
 
   private request = (url: string, options: RequestOptions) => {
     const {
@@ -53,7 +60,9 @@ export class HTTPTransport {
       withCredentials = true,
     } = options;
 
-    const query = method === METHODS.GET ? queryStringify(data as RequestData) : '';
+    const dataTypeCov = data as RequestData;
+
+    const query = method === METHODS.GET ? queryStringify(dataTypeCov) : '';
 
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
@@ -73,8 +82,8 @@ export class HTTPTransport {
       xhr.timeout = timeout;
       xhr.ontimeout = reject;
 
-      if (data?.constructor.name === 'FormData') {
-        xhr.send(data);
+      if (dataTypeCov?.constructor.name === 'FormData') {
+        xhr.send(data as Data);
       } else {
         method === METHODS.GET || !data ? xhr.send() : xhr.send(JSON.stringify(data));
       }
