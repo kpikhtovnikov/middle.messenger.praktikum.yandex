@@ -30,21 +30,26 @@ function queryStringify(data: RequestData) {
 }
 
 export class HTTPTransport {
+  private _baseUrl: string;
+
+  constructor(baseUrl: string) {
+    this._baseUrl = baseUrl;
+  }
   public get = (url: string, options = {}) =>
-    this.request(url, { ...options, method: METHODS.GET });
+    this.request(`${this._baseUrl}/${url}`, { ...options, method: METHODS.GET });
 
   public post = (url: string, options = {}) =>
-    this.request(url, { ...options, method: METHODS.POST });
+    this.request(`${this._baseUrl}/${url}`, { ...options, method: METHODS.POST });
 
   public put = (url: string, options = {}) =>
-    this.request(url, { ...options, method: METHODS.PUT });
+    this.request(`${this._baseUrl}/${url}`, { ...options, method: METHODS.PUT });
 
   public patch = (url: string, options = {}) => {
-    return this.request(url, { ...options, method: METHODS.PATCH });
+    return this.request(`${this._baseUrl}/${url}`, { ...options, method: METHODS.PATCH });
   };
 
   public delete = (url: string, options = {}) =>
-    this.request(url, { ...options, method: METHODS.DELETE });
+    this.request(`${this._baseUrl}/${url}`, { ...options, method: METHODS.DELETE });
 
   private request = (url: string, options: RequestOptions) => {
     const {

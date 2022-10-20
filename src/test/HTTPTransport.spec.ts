@@ -3,11 +3,11 @@ import { URLS, HEADERS } from '../utils/consts';
 import { expect } from 'chai';
 
 describe('utils/HTTPTransport', () => {
-  const http = new HTTPTransport();
+  const http = new HTTPTransport(URLS.BASE);
 
   describe('auth', () => {
     it('should return error by return user info', async () => {
-      await http.get(`${URLS.BASE}/auth/user`, {}).catch((err) => {
+      await http.get(`auth/user`, {}).catch((err) => {
         const textError = JSON.parse(err.responseText).reason;
         expect(textError).equal('Cookie is not valid');
       });
@@ -15,7 +15,7 @@ describe('utils/HTTPTransport', () => {
 
     it('should return OK by login', async () => {
       await http
-        .post(`${URLS.BASE}/auth/signin`, {
+        .post(`auth/signin`, {
           headers: HEADERS.CT_APPLICATION_JSON,
           data: { login: 'IvanIvanov', password: '12345678' },
         })
@@ -24,7 +24,7 @@ describe('utils/HTTPTransport', () => {
 
     it('should return error by login', async () => {
       await http
-        .post(`${URLS.BASE}/auth/signin`, {
+        .post(`auth/signin`, {
           headers: HEADERS.CT_APPLICATION_JSON,
           data: { login: 'InavIvanov', password: '12345678' },
         })
@@ -35,7 +35,7 @@ describe('utils/HTTPTransport', () => {
     });
 
     it('should return user info', async () => {
-      await http.get(`${URLS.BASE}/auth/user`, {}).then((userInfo: any) => {
+      await http.get(`auth/user`, {}).then((userInfo: any) => {
         const user = {
           id: 65828,
           first_name: 'Ivan',
